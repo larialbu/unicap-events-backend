@@ -12,7 +12,11 @@ function sendErrorResponse(res, statusCode, message) {
 
 exports.list = async (req, res) => {
     try {
-        const eventos = await db('eventos').select();
+        const eventos = await db('eventos')
+                        .join('locais', 'eventos.local_id', '=', 'locais.id')
+                        .join('ingressos', 'eventos.local_id', '=', 'ingressos.id')                 
+                        .select('eventos.*', 'locais.*');
+
         sendSuccessResponse(res, eventos);
     } catch (error) {
         console.error(error);
