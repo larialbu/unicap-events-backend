@@ -6,6 +6,7 @@ exports.up = function(knex) {
       table.string('password');
       table.string('phone');
       table.string('type');
+      table.string('permission');
       table.timestamps(true, true);
     });
   };
