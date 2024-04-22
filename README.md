@@ -8,5 +8,3 @@ npm run knex migrate:rollback --all
 
 # rodar seeders
 npm run knex seed:run
-
-teste

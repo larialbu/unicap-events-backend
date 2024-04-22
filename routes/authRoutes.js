@@ -1,9 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const AuthController = require('../controllers/AuthController');
+const loginSchema = require('../validate/auth/loginSchema');
+const registerSchema = require('../validate/auth/registerSchema');
 
-router.post('/login', AuthController.login);
-router.post('/registro', AuthController.register);
+// Middleware de validação para a rota de login
+function validateLogin(req, res, next) {
+  try {
+    loginSchema.parse(req.body);
+    next();
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
+
+// Middleware de validação para a rota de registro
+function validateRegister(req, res, next) {
+  try {
+    registerSchema.parse(req.body);
+    next();
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
+
+// Rotas
+router.post('/login', validateLogin, AuthController.login);
+router.post('/register', validateRegister, AuthController.register);
 // router.post('/logout', AuthController.logout);
 
 module.exports = router;
