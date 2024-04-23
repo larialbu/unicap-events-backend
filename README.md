@@ -1,15 +1,23 @@
-# unicap_events
+<h1 align="center"> UNICAP EVENTS</h1>
 
-# rodar migrations
-`` npm run knex migrate:latest ``
+<img src="http://www.unicap.br/simcbio/wp-content/uploads/2015/10/Logo1-IHU_22-300x225.jpg" alt="Instituto Humanitas" style="text-align: center">
 
-# apagar todas as migrations (PRECISA DE PERMISÃO PRA USAR)
-`` npm run knex migrate:rollback --all ``
+## rodar migrations
+``` 
+    npm run knex migrate:latest
+```
 
-# rodar seeders
-`` npm run knex seed:run ``
+## apagar todas as migrations (PRECISA DE PERMISÃO PRA USAR)
+``` 
+    npm run knex migrate:rollback --all
+```
 
-# Classes e funções 
+## rodar seeders
+``` 
+    npm run knex seed:run 
+```
+
+## Classes e funções 
 
 ```mermaid
 classDiagram
@@ -143,6 +151,7 @@ classDiagram
 ```
 
 ## Tabelas 
+
 ```mermaid
 erDiagram
     Users ||--o{ Orders : has
