@@ -49,15 +49,14 @@ erDiagram
     }
 
     Submission {
-        int SubmissionID PK
-        int UsuarioID FK
-        int EventoID FK
-        int AtividadeID FK
-        varchar TituloTrabalho
-        text Descricao
-        blob Arquivo
-        datetime DataSubmission
-        varchar Status
+        int submission_id PK
+        int user_id FK
+        int sub_event_id FK
+        varchar workTitle
+        text description
+        blob archive
+        datetime dataSubmission
+        varchar status
     }
 
     Events {
@@ -83,5 +82,5 @@ erDiagram
         int id PK
         int sub_event_id FK
         varchar block
-        varchar floor
+        varchar room
     }
