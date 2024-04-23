@@ -4,6 +4,7 @@ exports.up = function(knex) {
       table.string('name');
       table.string('email').unique();
       table.string('password');
+      table.string('ra');
       table.string('phone');
       table.string('type');
       table.string('permission');
