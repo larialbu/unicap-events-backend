@@ -6,7 +6,7 @@ exports.up = function(knex) {
       table.string('password');
       table.string('ra');
       table.string('phone');
-      table.string('type');
+      table.interger('type'); //Talvez colocar tipo de usuário como inteiro possa economizar memória (0,1,2)
       table.string('permission');
       table.timestamps(true, true);
     });

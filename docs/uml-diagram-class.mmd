@@ -62,13 +62,12 @@ classDiagram
 
     class Submission {
         -id : int
-        -usuarioId : int
-        -eventoId : int
-        -atividadeId : int
-        -tituloTrabalho : varchar
-        -descricao : text
-        -arquivo : blob
-        -dataSubmissao : datetime
+        -userId : int
+        -subEventId : int
+        -workTitle : varchar
+        -ddescription : text
+        -archive : blob
+        -submissionDate : datetime
         -status : varchar
         +createSubmission(usuarioId, eventoId, atividadeId, tituloTrabalho, descricao, arquivo) : void
         +readSubmission(id) : Submission

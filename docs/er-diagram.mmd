@@ -1,11 +1,11 @@
 erDiagram
     Users ||--o{ Orders : has
     Orders ||--o{ Tickets : has
-    Users ||--o{ Certificado : obtains
-    Sub_events ||--o{ Certificado : belongs_to
-    Users ||--o{ Submissao : makes
-    Events ||--o{ Submissao : belongs_to
-    Sub_events ||--|{ Submissao : optionally_belongs_to
+    Users ||--o{ Certificate : obtains
+    Sub_events ||--o{ Certificate : belongs_to
+    Users ||--o{ Submission : makes
+    Events ||--o{ Submission : belongs_to
+    Sub_events ||--|{ Submission : optionally_belongs_to
     Events ||--|{ Sub_events : has
     Sub_events ||--o{ Addresses : has
 
@@ -34,13 +34,13 @@ erDiagram
     Tickets {
         int id PK
         int order_id FK
-        int sub_event_id FK
+        int sub_event_id FK 
         varchar status
         varchar codigoingresso
         datetime created_at
     }
 
-    Certificado {
+    Certificate {
         int id PK
         int user_id FK
         int sub_event_id FK
@@ -48,15 +48,15 @@ erDiagram
         uuid verification_code
     }
 
-    Submissao {
-        int SubmissaoID PK
+    Submission {
+        int SubmissionID PK
         int UsuarioID FK
         int EventoID FK
         int AtividadeID FK
         varchar TituloTrabalho
         text Descricao
         blob Arquivo
-        datetime DataSubmissao
+        datetime DataSubmission
         varchar Status
     }
 
