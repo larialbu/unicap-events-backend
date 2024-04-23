@@ -65,13 +65,13 @@ classDiagram
         -userId : int
         -subEventId : int
         -workTitle : varchar
-        -ddescription : text
+        -description : text
         -archive : blob
         -submissionDate : datetime
         -status : varchar
-        +createSubmission(usuarioId, eventoId, atividadeId, tituloTrabalho, descricao, arquivo) : void
+        +createSubmission(userId, subEventId, workTitle, description, archive) : void
         +readSubmission(id) : Submission
-        +updateSubmission(id, usuarioId, eventoId, atividadeId, tituloTrabalho, descricao, arquivo, status) : void
+        +updateSubmission(id, userId, subEventId, workTitle, description, archive, status) : void
         +deleteSubmission(id) : void
         +getAllSubmissions() : Submission[]
     }
